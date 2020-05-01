@@ -4,14 +4,7 @@
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
-  "test": {
-    "database": "unit2_assessment",
-    "host": "127.0.0.1",
-    "dialect": "postgres"
-  },
   "production": {
-    "database": "unit2_assessment",
-    "host": "127.0.0.1",
-    "dialect": "postgres"
+    "use_env_variable": "DATABASE_URL"
   }
 }

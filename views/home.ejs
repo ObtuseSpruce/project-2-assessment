@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Wacky Widgets</h1>
+    
+    
+    <% console.log(widget) %>
+    <% if(widget.length > 0) { %>
+       <% widget.forEach(w => { %>
+        <section>
+               <h2><%= w.name %></h2>
+               <p>Quantity: <%=w.quantity %></p>
+               <form id="delete" method="POST" action="/<%= w.id %>?_method=DELETE">
+                    <input hidden value="<%= w.id %>">
+                    <input type="submit" value="DELETE">
+                </form>    
+            </section>
+       <% })%>
+    <% } else { %>
+        <h2>Sorry No Widgets Here 😢</h2>
+    <% } %>
+
+    <hr>
+
+    <div>
+        <h3>ADD A WIDGET</h3>
+        <form method="POST" action="/submit">
+            <input type="text" name="name" placeholder="Widget Name...">
+            <input type="number" name="quantity" placeholder="Widget Quantity...">
+            <input type="submit" value="ADD WIDGET">
+        </form>
+    </div>
+    
+</body>
+</html>
